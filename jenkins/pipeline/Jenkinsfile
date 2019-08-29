@@ -114,12 +114,12 @@ emailext body: 'Approve build $BUILD_NUMBER of $PROJECT_NAME for test deployment
                  approved = input message: 'Release to production?', ok: 'Yes', submitter: 'pm'
  	   	if (approved) {
     		withCredentials([usernamePassword(credentialsId: 'privilegedCreds', usernameVariable: 'USER', passwordVariable: 'PASS')]) 	
-			{		echo "Approved"
-
-    					        		}
+			{		echo "Approved" }
+				}
+}
 ansiblePlaybook become: true, colorized: true, disableHostKeyChecking: true, credentialsId: '0c540f01-a70b-482d-a251-79bf54a02ea7', extras: '--extra-vars \'{"build_number":"${BUILD_NUMBER}"}\'', installation: 'Ansible-gvt', inventory: 'ansibleworkspace/inventories/dev.ini', playbook: 'ansibleworkspace/playbooks/production_environment.yml'
-    				}
-    		      }
+    				
+    		      
             
 		    chuckNorris()
 		}
