@@ -115,8 +115,9 @@ emailext body: 'Approve build $BUILD_NUMBER of $PROJECT_NAME for test deployment
  	   	if (approved) {
     		withCredentials([usernamePassword(credentialsId: 'privilegedCreds', usernameVariable: 'USER', passwordVariable: 'PASS')]) 	
 			{		echo "Approved"
-ansiblePlaybook become: true, colorized: true, disableHostKeyChecking: true, credentialsId: '0c540f01-a70b-482d-a251-79bf54a02ea7', extras: '--extra-vars \'{"build_number":"${BUILD_NUMBER}"}\'', installation: 'Ansible-gvt', inventory: 'ansibleworkspace/inventories/dev.ini', playbook: 'ansibleworkspace/playbooks/production_environment.yml'
+
     					        		}
+ansiblePlaybook become: true, colorized: true, disableHostKeyChecking: true, credentialsId: '0c540f01-a70b-482d-a251-79bf54a02ea7', extras: '--extra-vars \'{"build_number":"${BUILD_NUMBER}"}\'', installation: 'Ansible-gvt', inventory: 'ansibleworkspace/inventories/dev.ini', playbook: 'ansibleworkspace/playbooks/production_environment.yml'
     				}
     		      }
             
