@@ -1,0 +1,13 @@
+---
+- name: Create tomcat containers 
+  docker_container:
+    name: "{{ tomcat_container }}"
+    image: "{{ tomcat_image }}"
+    state: started
+    ports:
+      - "{{ tomcat_port }}:8080"
+    volumes: 
+      - "{{ tomcat_bind_source }}:{{ tomcat_bind_target }}" 
+  when: tomcat_result.exists == false
+
+

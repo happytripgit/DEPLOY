@@ -1,0 +1,8 @@
+---
+- name: Check tomcat container exists
+  docker_container_info:
+    name: "{{ tomcat_container }}"
+  register: result
+- set_fact:
+    tomcat_result: "{{ result }}"
+

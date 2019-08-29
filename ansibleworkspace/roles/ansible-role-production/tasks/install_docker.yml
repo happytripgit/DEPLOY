@@ -1,0 +1,7 @@
+---
+- name: install docker if not present
+  include: "sys_pkg.yml"
+  when: docker_result.stdout == ''
+
+
+

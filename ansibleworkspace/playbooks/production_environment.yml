@@ -1,0 +1,8 @@
+---
+- name: Production Environment
+  hosts: AWS
+  become: true
+  roles:
+    - 'ansibleworkspace/roles/ansible-role-production'
+
+

@@ -1,0 +1,13 @@
+---
+- name: setup MySQL docker container
+  docker_container:
+    name: "{{ mysql_container }}"
+    image: mysql:5.5
+    state: started
+    ports:
+     - "3306:3306" 
+    env:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - /home/{{ username }}/mysql-init:/docker-entrypoint-initdb.d/:ro
+  when: mysql_result.exists == false

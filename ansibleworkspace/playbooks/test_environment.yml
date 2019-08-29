@@ -1,0 +1,8 @@
+---
+- name: Testing Environment
+  hosts: Local
+  become: true
+  roles:
+    - 'ansibleworkspace/roles/ansible-role-production'
+
+

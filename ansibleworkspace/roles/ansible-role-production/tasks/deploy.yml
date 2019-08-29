@@ -1,0 +1,6 @@
+---
+- name: Downloading war file to tomcat folder
+  get_url:
+    url: "{{ warfile_url }}"
+    dest: "{{ tomcat_bind_source }}/app.war"
+    mode: '0755'

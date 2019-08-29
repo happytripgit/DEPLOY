@@ -1,0 +1,8 @@
+---
+- name: Check tomcat container exists
+  docker_container_info:
+    name: "{{ mysql_container }}"
+  register: result
+- set_fact:
+    mysql_result: "{{ result }}"
+

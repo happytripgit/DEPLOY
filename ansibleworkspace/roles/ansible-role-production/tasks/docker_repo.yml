@@ -1,0 +1,6 @@
+---
+- name: adding docker package repo
+  apt_repository:
+        repo: "{{ docker_repo }}"
+        state: present
+- include: "docker_install.yml"

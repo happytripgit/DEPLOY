@@ -1,0 +1,12 @@
+---
+- include_tasks: "docker_check.yml"
+- include_tasks: "install_docker.yml"
+- include_tasks: "make_bind_path.yml"
+- include_tasks: "container_get.yml"
+- include_tasks: "check_tomcat_container.yml"
+- include_tasks: "check_mysql_container.yml"
+- include_tasks: "setup_tomcat_docker.yml"
+- include_tasks: "setup_MySQL_docker.yml"
+- include_tasks: "setup_MySQL_database.yml"
+- include_tasks: "docker_network_create.yml"
+- include_tasks: "deploy.yml"

@@ -1,0 +1,6 @@
+---
+- name: Configure docker daemon
+  template:
+   src: "{{ docker_template }}"
+   dest: "{{ daemon_config_directory }}"
+  notify: restart docker daemon service

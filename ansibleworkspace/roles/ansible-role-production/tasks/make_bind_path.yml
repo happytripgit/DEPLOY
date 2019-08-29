@@ -1,0 +1,11 @@
+---
+- name: create directory to bind with tomcat
+  file:
+    path: "{{ tomcat_bind_source }}"
+    state: directory
+- name: create directory to bind with mysql
+  file:
+    path: /home/{{ username }}/mysql-init
+    state: directory
+- name: Format tomcat bind folder
+  shell: sudo rm -r "{{ tomcat_bind_source }}"/*

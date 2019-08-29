@@ -1,0 +1,26 @@
+---
+# vars file for docker-preproduction
+preproduction-ip: localhost
+dependencies:
+  - 'apt-transport-https'
+  - 'ca-certificates'
+  - 'curl'
+  - 'software-properties-common'
+  - 'python3-pip'
+docker_key: "https://download.docker.com/linux/ubuntu/gpg"
+docker_repo: "deb https://download.docker.com/linux/ubuntu bionic stable"
+docker_pkg_name: 'docker-ce'
+tomcat_container: 'tomcat7'
+mysql_container: 'datamysql'
+tomcat_image: 'consol/tomcat-7.0'
+mysql_image: 'mysql'
+tomcat_result: ''
+mysql_result: ''
+images:
+  - 'consol/tomcat-7.0'
+  - 'mysql'
+tomcat_bind_source: '/home/{{ username }}/tomcat-bind'
+tomcat_bind_target: '/opt/tomcat/webapps'
+warfile_url: 'http://18.234.126.170:9030/nexus/content/repositories/releases/nexus/happytrip/prabhav-1/{{ build_number }}/prabhav-1-{{ build_number }}.war'
+
+

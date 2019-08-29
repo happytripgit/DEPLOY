@@ -1,0 +1,8 @@
+---
+- name: download SQL file 
+  get_url:
+    url: "https://gouthamvt1.s3.amazonaws.com/mysqlwithdata-Iteration1.sql"
+    dest: "/home/{{ username }}/mysql-init/database.sql"
+    mode: '0755'
+ 
+

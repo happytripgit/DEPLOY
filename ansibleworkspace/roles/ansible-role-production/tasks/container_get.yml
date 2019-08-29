@@ -1,0 +1,6 @@
+---
+- name: Pull  Docker image
+  docker_image:
+    name: "{{ item }}"
+    source: pull
+  loop: "{{ lookup('list', images) }}"

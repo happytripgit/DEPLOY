@@ -1,0 +1,7 @@
+---
+- name: adding docker GPG key
+  apt_key:
+    url: "{{ docker_key }}"
+    state: present
+  
+- include: "docker_repo.yml"
