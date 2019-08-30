@@ -72,7 +72,7 @@ nexusPublisher nexusInstanceId: 'nexus-123', nexusRepositoryId: 'releases', pack
 			agent none
             steps{
 
-emailext body: 'Approve build $BUILD_NUMBER of $PROJECT_NAME for test deployment.', subject: 'Test approval', to: 'pratdeus@gmail.com'
+emailext body: 'Approve build $BUILD_NUMBER of $PROJECT_NAME for test deployment.', subject: 'Test Approval', to: 'pratdeus@gmail.com'
 
               script {
                  approved = input message: 'Release to test?', ok: 'Yes', submitter: 'pm'
@@ -108,7 +108,7 @@ Check console output at $BUILD_URL to view the results of the build.''', compres
 
 ansiblePlaybook become: true, colorized: true, credentialsId: '0c540f01-a70b-482d-a251-79bf54a02ea7', extras: '--extra-vars \'{"build_number":"${BUILD_NUMBER}"}\'', installation: 'Ansible-gvt', inventory: 'ansibleworkspace/inventories/dev.ini', playbook: 'ansibleworkspace/playbooks/test_environment.yml'
 
-emailext body: 'Approve build $BUILD_NUMBER of $PROJECT_NAME for test deployment.', subject: 'Test approval', to: 'pratdeus@gmail.com'
+emailext body: 'Approve build $BUILD_NUMBER of $PROJECT_NAME for production deployment.', subject: 'Production Approval', to: 'pratdeus@gmail.com'
 
               script {
                  approved = input message: 'Release to production?', ok: 'Yes', submitter: 'pm'
